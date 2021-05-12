@@ -29,8 +29,13 @@ Now lets invoke plaster to setup a new project based on a template.
 Invoke-Plaster -TemplatePath .\ -DestinationPath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\"
 ```
 
-* Enter name of plugin *Set Activity,Table,WebService and Shared module suffix/prefix names*
-* Enter the version number of this plugin *Set version number in PowerShell manifest*
-* Enter the author of this plugin *Set author property in PowerShell manifest*
-* Enter the company *Set Company and Copyright property in PowerShell manifest*
+Invoke-Plaster will prompt for the following details:
 
+* Enter **name** of plugin *Set Activity,Table,WebService and Shared module suffix/prefix names*
+* Enter the **version** number of this plugin *Set version number in PowerShell manifest*
+* Enter the **author** of this plugin *Set author property in PowerShell manifest*
+* Enter the **company** *Set Company and Copyright property in PowerShell manifest*
+
+It will then scaffold a plugin in the *Provider extensions* folder of Zervicepoint.
+
+![Output](images/invoke-plaster-sample.PNG)

@@ -150,9 +150,6 @@
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\sv-SE\Activity.ZP.Template.psd1'
                       destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\sv-SE\Activity.${PLASTER_PARAM_PluginName}.psd1' />
 
-        <templateFile source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.psm1'
-                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\Activity.${PLASTER_PARAM_PluginName}.psm1' />
-
         <message>Creating Zervicepoint Activities completed.</message>
 
         <message>Creating Zervicepoint data sources.</message>
