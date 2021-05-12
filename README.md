@@ -23,7 +23,7 @@ Clone this project to a local folder.
 git clone https://github.com/zervicepoint/zervicepoint-starter-base.git
 ```
 
-Now lets invoke plaster to setup a new project based on a template.
+Run Invoke-Plaster to setup a new project based on a template.
 
 ```powershell
 Invoke-Plaster -TemplatePath .\ -DestinationPath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\"
@@ -39,3 +39,18 @@ Invoke-Plaster will prompt for the following details:
 It will then scaffold a plugin in the *Provider extensions* folder of Zervicepoint.
 
 ![Output](images/invoke-plaster-sample.PNG)
+
+## Next steps
+
+1. Create a **pluginname**.providers.xml file to inventory the plugin and make it available in your Zervicepoint store.
+
+
+## This is a example
+
+```powershell
+New-ZPProviderXML -PackageName "My Plugin" -ProviderType Activity -AssemblyType PowerShell -SourcePath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Activities"
+# Creates My Plugin.provisioningsystem.provider.xml in C:\Program Files\Zipper\Zervicepoint\ProvisioningSystem\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Activities
+
+New-ZPProviderXML -PackageName "My Plugin" -ProviderType DataSource -AssemblyType PowerShell -SourcePath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Data sources"
+# Creates My Plugin.provisioningsystem.provider.xml in C:\Program Files\Zipper\Zervicepoint\ClientWebService\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Data sources
+```
