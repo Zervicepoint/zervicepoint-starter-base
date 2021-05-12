@@ -52,5 +52,5 @@ New-ZPProviderXML -PackageName "My Plugin" -ProviderType Activity -AssemblyType 
 # Creates My Plugin.provisioningsystem.provider.xml in C:\Program Files\Zipper\Zervicepoint\ProvisioningSystem\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Activities
 
 New-ZPProviderXML -PackageName "My Plugin" -ProviderType DataSource -AssemblyType PowerShell -SourcePath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Data sources"
-# Creates My Plugin.provisioningsystem.provider.xml in C:\Program Files\Zipper\Zervicepoint\ClientWebService\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Data sources
+# Creates My Plugin.clientwebservice.provider.xml in C:\Program Files\Zipper\Zervicepoint\ClientWebService\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\\Data sources
 ```
