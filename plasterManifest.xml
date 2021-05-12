@@ -10,13 +10,9 @@
         <tags>Zervicepoint, Plugin</tags>
     </metadata>
     <parameters>
-        <parameter name='ModuleName'
+        <parameter name='PluginName'
                    type='text'
                    prompt='Enter name of plugin'/>
-
-        <parameter name='ModuleDesc'
-                   type='text'
-                   prompt='Enter a description for the plugin'/>
 
         <parameter name='Version'
                    type='text'
@@ -37,7 +33,7 @@
         <message>&#10;&#10;Scaffolding your Zervicepoint PowerShell Plugin...&#10;&#10;&#10;</message>
 
         <message>Create shared module</message>
-        <message>This shared module is nested with Activity.$PLASTER_PARAM_ModuleName and it can useful to place common functions here.</message>
+        <message>This shared module is nested with Activity.$PLASTER_PARAM_PluginName and it can useful to place common functions here.</message>
 
          <!--
             Create <NewPluginName>\Shared modules\<NewPluginName>.Common\<NewPluginName>.Common.psd1
@@ -45,18 +41,18 @@
         -->
 
         <file source='ZP.Template\Shared modules'
-              destination='${PLASTER_PARAM_ModuleName}\Shared modules' />
+              destination='${PLASTER_PARAM_PluginName}\Shared modules' />
 
         <file source='ZP.Template\Shared modules\ZP.Template.Common'
-              destination='${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common' />
+              destination='${PLASTER_PARAM_PluginName}\Shared modules\${PLASTER_PARAM_PluginName}.Common' />
         
         <templateFile source='ZP.Template\Shared modules\ZP.Template.Common\ZP.Template.Common.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psd1' />
-            <modify path= '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psd1'
+                      destination = '${PLASTER_PARAM_PluginName}\Shared modules\${PLASTER_PARAM_PluginName}.Common\${PLASTER_PARAM_PluginName}.Common.psd1' />
+            <modify path= '${PLASTER_PARAM_PluginName}\Shared modules\${PLASTER_PARAM_PluginName}.Common\${PLASTER_PARAM_PluginName}.Common.psd1'
                     encoding='UTF8'>
                     <replace>
                         <original>ZP.Template</original>
-                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                        <substitute expand='true'>$PLASTER_PARAM_PluginName</substitute>
                     </replace>
 
                     <replace>
@@ -86,7 +82,7 @@
             </modify>
 
         <templateFile source='ZP.Template\Shared modules\ZP.Template.Common\ZP.Template.Common.psm1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psm1' />
+                      destination = '${PLASTER_PARAM_PluginName}\Shared modules\${PLASTER_PARAM_PluginName}.Common\${PLASTER_PARAM_PluginName}.Common.psm1' />
 
         <message>Create shared module completed.</message>
 
@@ -99,19 +95,19 @@
         -->
 
         <file source='ZP.Template\Activities' 
-              destination='${PLASTER_PARAM_ModuleName}\Activities' />
+              destination='${PLASTER_PARAM_PluginName}\Activities' />
 
         <file source='ZP.Template\Activities\Activity.ZP.Template'
-              destination='${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}' />
+              destination='${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}' />
     
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psd1'
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\Activity.${PLASTER_PARAM_PluginName}.psd1'
                       encoding='UTF8' />
-            <modify path= '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psd1'
+            <modify path= '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\Activity.${PLASTER_PARAM_PluginName}.psd1'
                     encoding='UTF8'>
                     <replace>
                         <original>ZP.Template</original>
-                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                        <substitute expand='true'>$PLASTER_PARAM_PluginName</substitute>
                     </replace>
 
                     <replace>
@@ -140,22 +136,22 @@
                     </replace>
             </modify>
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\en-US'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\en-US' />
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\en-US' />
 
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\en-US\Activity.ZP.Template.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\en-US\Activity.${PLASTER_PARAM_ModuleName}.psd1' />
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\en-US\Activity.${PLASTER_PARAM_PluginName}.psd1' />
 
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.psm1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psm1' />
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\Activity.${PLASTER_PARAM_PluginName}.psm1' />
 
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\sv-SE'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\sv-SE' />
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\sv-SE' />
 
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\sv-SE\Activity.ZP.Template.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\sv-SE\Activity.${PLASTER_PARAM_ModuleName}.psd1' />
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\sv-SE\Activity.${PLASTER_PARAM_PluginName}.psd1' />
 
         <templateFile source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.psm1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psm1' />
+                      destination = '${PLASTER_PARAM_PluginName}\Activities\Activity.${PLASTER_PARAM_PluginName}\Activity.${PLASTER_PARAM_PluginName}.psm1' />
 
         <message>Creating Zervicepoint Activities completed.</message>
 
@@ -167,14 +163,14 @@
         -->
 
         <file source='ZP.Template\Data sources'
-              destination='${PLASTER_PARAM_ModuleName}\Data sources' />
+              destination='${PLASTER_PARAM_PluginName}\Data sources' />
 
         <file source='ZP.Template\Data sources\DropDown.ZPResource'
-              destination='${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPResource' />
+              destination='${PLASTER_PARAM_PluginName}\Data sources\DropDown.ZPResource' />
 
                 <templateFile source='ZP.Template\Data sources\DropDown.ZPResource\DropDown.ZPResource.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psd1' />
-                <modify path= '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psd1'
+                      destination = '${PLASTER_PARAM_PluginName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psd1' />
+                <modify path= '${PLASTER_PARAM_PluginName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psd1'
                         encoding='UTF8'>
 
                     <replace>
@@ -204,7 +200,7 @@
                 </modify>
 
         <templateFile source='ZP.Template\Data sources\DropDown.ZPResource\DropDown.ZPResource.psm1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psm1' />
+                      destination = '${PLASTER_PARAM_PluginName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psm1' />
         
 
         <!--
@@ -213,15 +209,15 @@
         -->
 
         <file source='ZP.Template\Data sources\WebService.ZP.Template'
-              destination='${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}' />
+              destination='${PLASTER_PARAM_PluginName}\Data sources\WebService.${PLASTER_PARAM_PluginName}' />
 
         <templateFile source='ZP.Template\Data sources\WebService.ZP.Template\WebService.ZP.Template.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}\WebService.${PLASTER_PARAM_ModuleName}.psd1' />
-            <modify path= '${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}\WebService.${PLASTER_PARAM_ModuleName}.psd1'
+                      destination = '${PLASTER_PARAM_PluginName}\Data sources\WebService.${PLASTER_PARAM_PluginName}\WebService.${PLASTER_PARAM_PluginName}.psd1' />
+            <modify path= '${PLASTER_PARAM_PluginName}\Data sources\WebService.${PLASTER_PARAM_PluginName}\WebService.${PLASTER_PARAM_PluginName}.psd1'
                     encoding='UTF8'>
                     <replace>
                         <original>ZP.Template</original>
-                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                        <substitute expand='true'>$PLASTER_PARAM_PluginName</substitute>
                     </replace>
 
                     <replace>
@@ -251,7 +247,7 @@
             </modify>
 
         <templateFile source='ZP.Template\Data sources\WebService.ZP.Template\WebService.ZP.Template.psm1'
-            destination = '${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}\WebService.${PLASTER_PARAM_ModuleName}.psm1' />
+            destination = '${PLASTER_PARAM_PluginName}\Data sources\WebService.${PLASTER_PARAM_PluginName}\WebService.${PLASTER_PARAM_PluginName}.psm1' />
         
         <!--
             Create <NewPluginName>\Data sources\Table.<NewPluginName>\Table.<NewPluginName>.psd1
@@ -259,15 +255,15 @@
         -->
 
         <file source='ZP.Template\Data sources\Table.ZP.Template'
-              destination='${PLASTER_PARAM_ModuleName}\Data sources\Table.${PLASTER_PARAM_ModuleName}' />
+              destination='${PLASTER_PARAM_PluginName}\Data sources\Table.${PLASTER_PARAM_PluginName}' />
 
         <templateFile source='ZP.Template\Data sources\Table.ZP.Template\Table.ZP.Template.psd1'
-                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\Table.${PLASTER_PARAM_ModuleName}\Table.${PLASTER_PARAM_ModuleName}.psd1' />
-            <modify path= '${PLASTER_PARAM_ModuleName}\Data sources\Table.${PLASTER_PARAM_ModuleName}\Table.${PLASTER_PARAM_ModuleName}.psd1'
+                      destination = '${PLASTER_PARAM_PluginName}\Data sources\Table.${PLASTER_PARAM_PluginName}\Table.${PLASTER_PARAM_PluginName}.psd1' />
+            <modify path= '${PLASTER_PARAM_PluginName}\Data sources\Table.${PLASTER_PARAM_PluginName}\Table.${PLASTER_PARAM_PluginName}.psd1'
                     encoding='UTF8'>
                     <replace>
                         <original>ZP.Template</original>
-                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                        <substitute expand='true'>$PLASTER_PARAM_PluginName</substitute>
                     </replace>
 
                     <replace>
@@ -297,7 +293,7 @@
             </modify>
 
         <templateFile source='ZP.Template\Data sources\Table.ZP.Template\Table.ZP.Template.psm1'
-            destination = '${PLASTER_PARAM_ModuleName}\Data sources\Table.${PLASTER_PARAM_ModuleName}\Table.${PLASTER_PARAM_ModuleName}.psm1' />
+            destination = '${PLASTER_PARAM_PluginName}\Data sources\Table.${PLASTER_PARAM_PluginName}\Table.${PLASTER_PARAM_PluginName}.psm1' />
 
         <message> Creating Zervicepoint data sources completed.</message>
 
