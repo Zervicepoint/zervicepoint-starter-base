@@ -2,7 +2,7 @@
 
 Starter template for Zervicepoint plugin using PowerShell. The intent of this project is to help scaffolding a new Zervicepoint plugin quickly.
 
-If you're unfamiliar with [activities](https://docs.zervicepoint.com/reference/activity) or [data sources](https://docs.zervicepoint.com/tutorials/data-source/) please check our [docs](https://docs.zervicepoint.com).
+If you're unfamiliar with [activities](https://docs.zervicepoint.com/reference/activity) or [data sources](https://docs.zervicepoint.com/tutorials/data-source/) please check our [docs](https://docs.zervicepoint.com) site.
 
 ## Requirements
 
@@ -42,8 +42,6 @@ Invoke-Plaster will prompt for the following details:
 It will then scaffold a plugin in the *Provider extensions* folder of Zervicepoint.
 
 ![Output](images/invoke-plaster-sample.PNG)
-
-The template also created the required providers.xml files needed to inventory the plugin.
 
 ## Next steps
 
