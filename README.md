@@ -29,6 +29,7 @@ git clone https://github.com/zervicepoint/zervicepoint-starter-base.git
 Run Invoke-Plaster to setup a new project based on a template.
 
 ```powershell
+# -TemplatePath must point to the location of the cloned project.
 Invoke-Plaster -TemplatePath .\ -DestinationPath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\"
 ```
 
