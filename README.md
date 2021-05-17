@@ -30,7 +30,7 @@ Run Invoke-Plaster to setup a new project based on a template.
 
 ```powershell
 # -TemplatePath must point to the location of the cloned project.
-Invoke-Plaster -TemplatePath .\ -DestinationPath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\"
+Invoke-Plaster -TemplatePath .\zervicepoint-starter-base -DestinationPath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\"
 ```
 
 Invoke-Plaster will prompt for the following details:
