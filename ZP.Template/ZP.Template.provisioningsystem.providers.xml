@@ -5,6 +5,7 @@
     <configuration>
     <add key="scriptpath" value="C:\Program Files\Zipper\Zervicepoint\Provider extensions\ZP.Template\Activities\" />
     <add key="UICulture" value="en-US" />
+    <add key="DayOrMonth" value="Day" />
     </configuration>
 </provider>
 </providers>

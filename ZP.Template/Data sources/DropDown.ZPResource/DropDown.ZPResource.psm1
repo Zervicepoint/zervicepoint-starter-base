@@ -26,5 +26,9 @@ function GetCategories($config)
 
 function GetDefault($config)
 {    
-     Search -Config $config
+    $day = (Get-Date).DayOfWeek.ToString()
+    [PSCustomObject]@{
+        Id = $day
+        Name = $day
+    }
 }

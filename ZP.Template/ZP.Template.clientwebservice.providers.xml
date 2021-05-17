@@ -4,6 +4,7 @@
     <assembly type="Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.PowerShellEngine" assemblyFile="C:\Program Files\Zipper\ZervicePoint\Web\ClientWebService\Bin\Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.dll" />
     <configuration>
     <add key="scriptpath" value="C:\Program Files\Zipper\Zervicepoint\Provider extensions\ZP.Template\Data sources\" />
+    <add key="DayOrMonth" value="Day" />
     </configuration>
 </provider>
 </providers>
