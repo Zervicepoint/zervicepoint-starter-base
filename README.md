@@ -40,68 +40,10 @@ It will then scaffold a plugin in the *Provider extensions* folder of Zervicepoi
 
 ![Output](images/invoke-plaster-sample.PNG)
 
+The template also created the required providers.xml files needed to inventory the plugin.
+
 ## Next steps
 
-1. Create a **pluginname**.providers.xml file to inventory the plugin and make it available in your Zervicepoint store.
-2. Check out zervicepoint-powershell-snippets and extend your new plugin by adding additional activities and data sources.
-
-
-## This is a example
-
-```powershell
-New-ZPProviderXML -PackageName "My awesome plugin" -ProviderType Activity -AssemblyType PowerShell -SourcePath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\Activities"
-# Creates My awesome plugin.provisioningsystem.provider.xml in C:\Program Files\Zipper\Zervicepoint\ProvisioningSystem\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\Activities
-
-New-ZPProviderXML -PackageName "My awesome plugin" -ProviderType DataSource -AssemblyType PowerShell -SourcePath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\Data sources"
-# Creates My awesome plugin.clientwebservice.provider.xml in C:\Program Files\Zipper\Zervicepoint\ClientWebService\ and will inventory PowerShell providers from C:\Program Files\Zipper\Zervicepoint\Provider extensions\Data sources
-```
-
-
-## This is another sample
-
-```powershell
-# Copy paste or run the following command lines to create a manifest file for activities
-
-$xml = @"
-<?xml version="1.0" encoding="utf-8"?>
-<providers>
-<provider name="My awesome plugin">
-    <assembly type="Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.PowerShellEngine" assemblyFile="C:\Program Files\Zipper\ZervicePoint\ProvisioningSystem\Providers\PowerShell\Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.dll" />
-    <configuration>
-    <add key="scriptpath" value="C:\Program Files\Zipper\Zervicepoint\Provider extensions\My awesome plugin\Activities\" />
-    <add key="UICulture" value="en-US" />
-    </configuration>
-</provider>
-</providers>
-"@
-
-$xml | Out-File -FilePath 'C:\Program Files\Zipper\Zervicepoint\ProvisioningSystem\My awesome plugin.provisioningsystem.providers.xml' -Encoding UTF8
-
-# Restart ProvisioningSystem to inventory activities
-Restart-Service -Name ProvisioningSystem
-
-```
-
-```powershell
-# Copy paste or run the following command lines to create a manifest file for data sources
-
-$xml = @"
-<?xml version="1.0" encoding="utf-8"?>
-<providers>
-<provider name="My awesome plugin">
-    <assembly type="Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.PowerShellEngine" assemblyFile="C:\Program Files\Zipper\ZervicePoint\Web\ClientWebService\Bin\Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.dll" />
-    <configuration>
-    <add key="scriptpath" value="C:\Program Files\Zipper\Zervicepoint\Provider extensions\My awesome plugin\Data sources\" />
-    </configuration>
-</provider>
-</providers>
-"@
-
-
-$xml | Out-File -FilePath 'C:\Program Files\Zipper\Zervicepoint\ClientWebService\My awesome plugin.clientwebservice.providers.xml' -Encoding UTF8
-
-# Restart ProvisioningSystemInventory to inventory data sources
-Restart-Service -Name ProvisioningSystemInventory
-
-
-```
+1. Copy the **pluginname**.clientwebservice.providers.xml and **pluginname**.provisioningsystem.providers.xml to the ClientWebService and ProvisioningSystem folder of the ZP Worker.
+2. Restart ProvisioningSystem and ProvisioningSystemInventory to trigger a new inventory (else every 1 hour a inventory is run) to make the new plugin available in your store.
+3. Check out zervicepoint-powershell-snippets and extend your new plugin by adding additional activities and data sources.

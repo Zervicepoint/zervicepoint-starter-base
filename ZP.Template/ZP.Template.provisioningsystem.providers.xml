@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<providers>
+<provider name="ZP.Template">
+    <assembly type="Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.PowerShellEngine" assemblyFile="C:\Program Files\Zipper\ZervicePoint\ProvisioningSystem\Providers\PowerShell\Zipper.ZervicePoint.ProvisioningSystem.PowerShellProvider.dll" />
+    <configuration>
+    <add key="scriptpath" value="C:\Program Files\Zipper\Zervicepoint\Provider extensions\ZP.Template\Activities\" />
+    <add key="UICulture" value="en-US" />
+    </configuration>
+</provider>
+</providers>

@@ -294,5 +294,44 @@
 
         <message> Creating Zervicepoint data sources completed.</message>
 
+        <message>Creating Zervicepoint provider.xml files</message>
+
+        <!--
+            Create <NewPluginName>\<NewPluginName>.provisioningsystem.providers.xml
+            Create <NewPluginName>\<NewPluginName>.clientwebservice.providers.xml
+        -->
+
+        <templateFile source='ZP.Template\ZP.Template.provisioningsystem.providers.xml'
+            destination = '${PLASTER_PARAM_PluginName}\${PLASTER_PARAM_PluginName}.provisioningsystem.providers.xml' />
+
+            <modify path= '${PLASTER_PARAM_PluginName}\${PLASTER_PARAM_PluginName}.provisioningsystem.providers.xml'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>ZP.Template</original>
+                        <substitute expand='true'>$PLASTER_PARAM_PluginName</substitute>
+                    </replace>
+            </modify>
+
+        <templateFile source='ZP.Template\ZP.Template.clientwebservice.providers.xml'
+            destination = '${PLASTER_PARAM_PluginName}\${PLASTER_PARAM_PluginName}.clientwebservice.providers.xml' />
+
+            <modify path= '${PLASTER_PARAM_PluginName}\${PLASTER_PARAM_PluginName}.clientwebservice.providers.xml'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>ZP.Template</original>
+                        <substitute expand='true'>$PLASTER_PARAM_PluginName</substitute>
+                    </replace>
+            </modify>
+
+        <message> Creating Zervicepoint provider.xml files completed.</message>
+
+        <message> Don't forget to move the providers.xml files to the ZP Worker in order to inventory them. </message>
+
+        <message>Copy-Item 'C:\Program Files\Zipper\ZervicePoint\Provider extensions\${PLASTER_PARAM_PluginName}\${PLASTER_PARAM_PluginName}.provisioningsystem.providers.xml' 'C:\Program Files\Zipper\ZervicePoint\ProvisioningSystem\${PLASTER_PARAM_PluginName}.provisioningsystem.providers.xml' </message>
+        <message>Copy-Item 'C:\Program Files\Zipper\ZervicePoint\Provider extensions\${PLASTER_PARAM_PluginName}\${PLASTER_PARAM_PluginName}.clientwebservice.providers.xml' 'C:\Program Files\Zipper\ZervicePoint\ClientWebService\${PLASTER_PARAM_PluginName}.clientwebservice.providers.xml' </message>
+
+        <message>To restart the inventory services on ZP worker you can run: </message>
+        <message>Restart-Service -Name ProvisioningSystem,ProvisioningSystemInventory </message>
+
     </content>
 </plasterManifest>
