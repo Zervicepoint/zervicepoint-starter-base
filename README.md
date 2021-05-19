@@ -48,4 +48,4 @@ It will then scaffold a plugin in the *Provider extensions* folder of Zervicepoi
 
 1. Copy the **pluginname**.clientwebservice.providers.xml and **pluginname**.provisioningsystem.providers.xml to the ClientWebService and ProvisioningSystem folder of the ZP Worker.
 2. Restart ProvisioningSystem and ProvisioningSystemInventory to trigger a new inventory (else every 1 hour a inventory is run) to make the new plugin available in your store.
-3. Check out zervicepoint-powershell-snippets and extend your new plugin by adding additional activities and data sources.
+3. Check out [Zervicepoint snippets](https://github.com/zervicepoint/zervicepoint-vscode) by installing our extension via VS Code marketplace and extend your new plugin by adding additional activities and data sources.
